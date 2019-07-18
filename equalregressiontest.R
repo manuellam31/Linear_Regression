@@ -23,6 +23,8 @@ summary(reg2)
 x=c(x1,x2) #combine x1 and x2
 y=c(y1,y2) #combine y1 and y2
 plot(x,y)
+abline(reg1)
+abline(reg2)
 
 w=c(rep(x = 0,times=10),rep(x = 1,times=11)) #dummy variable
 xw=x*w
