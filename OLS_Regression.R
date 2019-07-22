@@ -32,7 +32,9 @@ ggplot(CBZ, aes(ngmL,AreaRatio))+
   geom_point()+
   stat_smooth(method=lm,color="green", se = TRUE,level = 0.95)+
   ggtitle("Carbamazepine", subtitle = '068370+0.07233x')+
-  theme_bw()
+  theme_bw()+
+  xlab("Concentração(ng/mL")+
+  ylab("Razão Área (CBZ/CBZD2)")
 
 #Check lack of fit
 library(rsm)
