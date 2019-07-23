@@ -4,8 +4,10 @@
 cor(CBZ$ngmL,CBZ$AreaRatio)
 # 0.9971903 # OK
 
-
-summary(tentar)
+Ftabreg <- qf(.95, df1=1, df2=26)
+Ftabreg
+Ftablack <- qf(.95, df1=7, df2=19)
+Ftablack
 
 ########################
 library(rsm)
@@ -86,13 +88,13 @@ ggplot(CBZ, aes(ngmL,AreaRatio))+
   theme_bw()+
   xlab("Concentration(ng/mL")+
   ylab("Area Ratio (CBZ/CBZD2)")+
-  labs(caption = "Weighted Regression: Factor 1/x²")
+  labs(caption = "Weighted Regression: Factor 1/xÂ²")
 
 #both together
 ggplot(CBZ, aes(ngmL,AreaRatio))+
   geom_point()+
   stat_function(fun=lin,aes(colour="Factor: 1"))+
-  stat_function(fun=wr,aes(colour="Factor: 1/x²"))+
+  stat_function(fun=wr,aes(colour="Factor: 1/xÂ²"))+
   scale_colour_manual("Regression Weight", values = c("green", "blue"))+
   ggtitle("Carbamazepine")+
   theme_bw()+
